@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    {{ .Title }}
+  </title>
+  {{/* $js := resources.Get "js/main.js" | js.Build (dict "minify" false "params" (dict "myparam" "Hugo Rocks!") ) */}}
+  {{ $js := resources.Get "js/main.js" | js.Build }}
+  <script src="{{ $js.RelPermalink }}"></script>
+</head>
+<body class="mt-10">
+  <script>
+    hello();
+  </script>
+</body>
